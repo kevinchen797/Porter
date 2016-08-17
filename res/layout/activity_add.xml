@@ -1,0 +1,110 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/add"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/transparent" >
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:background="@color/transparent">
+	    <ImageButton
+	        android:id="@+id/back_btn"
+	        android:contentDescription="@string/back_btn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/back"
+	        android:padding="8dp"
+	        android:background="@color/transparent" />
+	    <TextView
+	        android:id="@+id/title_add" 
+	        android:layout_width="0dp"
+	        android:layout_height="match_parent"
+	        android:layout_weight="1"
+	        android:gravity="center"
+	        android:text="@string/new_note"
+	        android:textSize="20sp"
+	        android:padding="8dp"
+	        android:textColor="@color/white"/>
+	    <ImageButton
+	        android:contentDescription="@string/lock_btn"
+	        android:id="@+id/cloud_btn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/icon_yun"
+	        android:padding="8dp"
+	        android:background="@color/transparent"  />
+	</LinearLayout>
+	<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginBottom="1dp" >
+   		<TextView
+   		    android:id="@+id/length_txt" 
+   		    android:layout_width="wrap_content"
+   		    android:layout_height="match_parent"
+   		    android:gravity="center"
+   		    android:text="@string/num_zero"
+   		    android:textSize="16sp"
+   		    android:textColor="@color/skinColor0"
+   		    android:padding="8dp"
+   		    android:visibility="gone"
+   		    android:background="@color/white" />
+		<EditText
+		    android:id="@+id/title_txt"
+		    android:inputType="text" 
+		    android:layout_width="0dp"
+		    android:layout_height="match_parent"
+		    android:layout_weight="1"
+		    android:gravity="center"
+		    android:singleLine="true"
+		    android:padding="8dp"
+		    android:textSize="18sp"
+		    android:textColor="@color/skinColor0"
+		    android:hint="@string/title_hint"
+		    android:textColorHint="@color/darkgray"
+		    android:background="@color/white" />
+   		<Button 
+   		    android:id="@+id/clear_btn"
+		    android:text="@string/clear_btn"
+		    android:padding="8dp"
+		    android:layout_width="wrap_content"
+		    android:layout_height="match_parent"
+		    android:gravity="center"
+		    android:textColor="@color/darkgray"
+		    android:textSize="16sp"
+		    android:visibility="gone"
+		    android:background="@color/white" />
+	</LinearLayout>
+		<EditText
+		    android:id="@+id/note_txt"
+		    android:inputType="textMultiLine"
+		    android:layout_width="match_parent"
+		   	android:layout_height="0dp"
+		   	android:layout_weight="1"
+		   	android:gravity="left|top"
+		    android:padding="8dp"
+		    android:textSize="18sp"
+		    android:textColor="@color/skinColor0"
+		    android:hint="@string/content_hint"
+		    android:textColorHint="@color/darkgray"
+		    android:background="@color/white" />
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center"
+	    android:orientation="horizontal">
+	    <ImageButton
+	        android:contentDescription="@string/save_btn"
+	        android:id="@+id/save_btn"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:src="@drawable/save"
+	        android:padding="8dp"
+	        android:background="@color/transparent"  />
+	</LinearLayout>
+</LinearLayout>

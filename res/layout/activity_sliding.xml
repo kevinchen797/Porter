@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:hyman="http://schemas.android.com/apk/res/cn.cmy.cmynote"
+    android:id="@+id/menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <cn.cmy.cmynote.widget.SlidingMenu
+        android:id="@+id/id_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        hyman:rightPadding="100dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <include layout="@layout/left_menu" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <include layout="@layout/activity_main" />
+            </LinearLayout>
+        </LinearLayout>
+    </cn.cmy.cmynote.widget.SlidingMenu>
+
+</RelativeLayout>

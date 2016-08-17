@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/welcome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/blue" >
+
+    <TextView
+        android:id="@+id/name_txt" 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textSize="37sp"
+        android:textColor="@color/white"
+        android:text="@string/app_name"
+        android:background="@color/transparent"/>
+   	<ImageView 
+   	    android:id="@+id/ivAppImage"
+   	    android:contentDescription="@string/app_name"
+   	    android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingBottom="20dp"
+        android:background="@color/transparent"
+        android:src="@drawable/windnote_big"/>
+    <TextView 
+        android:id="@+id/quote_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:paddingRight="20dp"
+        android:paddingLeft="30dp"
+        android:lineSpacingExtra="10dp"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:textColor="@color/blue"
+        android:background="@color/white"
+        android:text="@string/hello_world"/>
+</LinearLayout>
