@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\build\\intermediates\\res\\merged\\debug\\layout\\activity_sliding.xml",
+        "source": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\res\\layout\\activity_sliding.xml"
+    },
+    {
+        "merged": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\build\\intermediates\\res\\merged\\debug\\layout\\deletenote_layout.xml",
+        "source": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\res\\layout\\deletenote_layout.xml"
+    },
+    {
+        "merged": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\build\\intermediates\\res\\merged\\debug\\layout\\activity_choosecolor.xml",
+        "source": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\res\\layout\\activity_choosecolor.xml"
+    },
+    {
+        "merged": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
+        "source": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\build\\intermediates\\res\\merged\\debug\\layout\\left_menu.xml",
+        "source": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\res\\layout\\left_menu.xml"
+    },
+    {
+        "merged": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\build\\intermediates\\res\\merged\\debug\\layout\\welcome.xml",
+        "source": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\res\\layout\\welcome.xml"
+    },
+    {
+        "merged": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\build\\intermediates\\res\\merged\\debug\\layout\\activity_add.xml",
+        "source": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\res\\layout\\activity_add.xml"
+    },
+    {
+        "merged": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\build\\intermediates\\res\\merged\\debug\\layout\\activity_about.xml",
+        "source": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\res\\layout\\activity_about.xml"
+    },
+    {
+        "merged": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\build\\intermediates\\res\\merged\\debug\\layout\\clear_layout.xml",
+        "source": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\res\\layout\\clear_layout.xml"
+    },
+    {
+        "merged": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\build\\intermediates\\res\\merged\\debug\\layout\\notes_items.xml",
+        "source": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\res\\layout\\notes_items.xml"
+    },
+    {
+        "merged": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\build\\intermediates\\res\\merged\\debug\\layout\\activity_regist.xml",
+        "source": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\res\\layout\\activity_regist.xml"
+    },
+    {
+        "merged": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\build\\intermediates\\res\\merged\\debug\\layout\\activity_note.xml",
+        "source": "E:\\Android\\DevelopCmy\\DreamFish\\CmyNoteEclipse\\res\\layout\\activity_note.xml"
+    }
+]

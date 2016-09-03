@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    	<TableRow >
+    	    <TextView
+    	        android:id="@+id/gone_time" 
+    	        android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    	        android:textSize="18sp"
+    	        android:gravity="center"
+    	        android:textColor="@color/white" />
+    	    <TextView
+    	        android:id="@+id/gone_count" 
+    	        android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    	        android:textSize="18sp"
+    	        android:gravity="center"
+    	        android:textColor="@color/white" />
+    	</TableRow>
+    	<TableRow>
+	    	<ImageView
+	    	    android:contentDescription="@string/word_yes"
+	    	    android:layout_width="wrap_content"
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_margin="5dp"
+	    	    android:padding="1dp"
+	    	    android:src="@drawable/yes"/>
+			<Button
+			    android:id="@+id/delete_yes"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_margin="5dp"
+	            android:textColor="@color/white"
+	            android:textSize="18sp"
+	            android:text="@string/delete_yes"
+	            android:background="@color/transparent" />
+		</TableRow>
+		<TableRow>
+			<ImageView
+	    	    android:contentDescription="@string/word_no"
+	    	    android:layout_width="wrap_content"
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_margin="5dp"
+	    	    android:padding="1dp"
+	    	    android:src="@drawable/no"/>
+			<Button
+			    android:id="@+id/delete_no"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_margin="5dp"
+	            android:textColor="@color/white"
+	            android:textSize="18sp"
+	            android:text="@string/delete_no"
+	            android:background="@color/transparent" />
+		</TableRow>
+</TableLayout>
