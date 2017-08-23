@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.github.dreamfish.kuaichuan">
+    package="io.github.dreamfish.porter">
 
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
@@ -95,7 +95,7 @@
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="io.github.dreamfish.kuaichuan.fileProvider"
+            android:authorities="io.github.dreamfish.porter.fileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

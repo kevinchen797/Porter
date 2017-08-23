@@ -20,7 +20,7 @@
         android:textStyle="bold"
         android:padding="10dp"/>
 
-    <io.github.mayubao.kuaichuan.ui.view.RadarScanView
+    <io.github.dreamfish.porter.ui.view.RadarScanView
         android:id="@+id/radarView"
         android:layout_width="160dp"
         android:layout_height="160dp"

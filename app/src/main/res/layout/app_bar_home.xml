@@ -47,7 +47,7 @@
     -->
 
     <!-- 设置顶部 layout_gravity="top"-->
-    <io.github.mayubao.kuaichuan.ui.view.MyScrollView
+    <io.github.dreamfish.porter.ui.view.MyScrollView
         android:id="@+id/msv_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -56,7 +56,7 @@
             android:layout_height="match_parent">
             <include layout="@layout/content_home" />
         </LinearLayout>
-    </io.github.mayubao.kuaichuan.ui.view.MyScrollView>
+    </io.github.dreamfish.porter.ui.view.MyScrollView>
 
 
     <!-- 设置顶部 layout_gravity="top"-->

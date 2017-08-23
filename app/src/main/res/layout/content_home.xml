@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="io.github.mayubao.kuaichuan.ui.HomeActivity"
+    tools:context="io.github.dreamfish.porter.ui.HomeActivity"
     tools:showIn="@layout/app_bar_home"
     android:layout_gravity="bottom">
     

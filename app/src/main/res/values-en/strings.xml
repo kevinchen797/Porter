@@ -68,8 +68,8 @@
     <string name="str_computer_transfer">Computer transfer</string>
     <string name="str_web_transfer">Web transfer</string>
 
-    <!--<string name="str_my_floating_action_button_behavior">io.github.mayubao.kuaichuan.ui.view.MyFloatingButtonBehavior</string>-->
-    <string name="str_my_floating_action_button_behavior">io.github.mayubao.kuaichuan.ui.view.FooterBehaviorDependAppBar</string>
+    <!--<string name="str_my_floating_action_button_behavior">io.github.dreamfish.porter.ui.view.MyFloatingButtonBehavior</string>-->
+    <string name="str_my_floating_action_button_behavior">io.github.dreamfish.porter.ui.view.FooterBehaviorDependAppBar</string>
 
 
     <string-array name="array_res">
@@ -97,10 +97,10 @@
     <string name="str_about_me">About author</string>
     <string name="tip_next_version_update">This function will be in the next version</string>
     <string name="title_about_me">About author</string>
-    <string name="str_about_me_desc">Author：mayubao</string>
-    <string name="str_about_me_qq">QQ：345269374</string>
-    <string name="str_about_me_email">Emial:345269374@qq.com</string>
-    <string name="str_about_me_github">Github:https://github.com/mayubao/KuaiChuan/</string>
+    <string name="str_about_me_desc">Author：DreamFish</string>
+    <string name="str_about_me_qq">QQ：1241648479</string>
+    <string name="str_about_me_email">Emial:cmy797@126.com</string>
+    <string name="str_about_me_github">Github:https://github.com/dreamfish797/Porter/</string>
     <string name="str_weiguan">Check</string>
     <string name="tip_web_transfer_first_tip">
         Step 1 \n

@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/tv_top_tip">
-        <io.github.mayubao.kuaichuan.ui.view.RadarLayout
+        <io.github.dreamfish.porter.ui.view.RadarLayout
             android:id="@+id/radarLayout"
             android:layout_height="match_parent"
             android:layout_width="match_parent" />
