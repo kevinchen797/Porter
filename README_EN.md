@@ -1,30 +1,30 @@
-# AnyShare
-[中文](https://github.com/dreamfish797/KuaiChuan/blob/master/README.md)
+# Porter
+[中文](https://github.com/dreamfish797/Porter/blob/master/README.md)
 
-This is an android application like AnyShare Application which can transfer files from device to the other device, and include socket communication(tcp, udp communication). If you like it, please give me a like, and if it is helpful to you, please fork it. Welcome your start and fork ^_^.
+This is an android application which can transfer files from device to the other device, and include socket communication(tcp, udp communication). If you like it, please give me a like, and if it is helpful to you, please fork it. Welcome your start and fork ^_^.
 
 ## Preview
 
 ### Home ###
-![Alt text](https://github.com/dreamfish797/KuaiChuan/blob/master/ScreenShot/home.gif)
+![Alt text](https://github.com/dreamfish797/Porter/blob/master/ScreenShot/home.gif)
 
 ### File Sender ###
-![Alt text](https://github.com/dreamfish797/KuaiChuan/blob/master/ScreenShot/fs_1.gif)
-![Alt text](https://github.com/dreamfish797/KuaiChuan/blob/master/ScreenShot/fs_2.gif)
-![Alt text](https://github.com/dreamfish797/KuaiChuan/blob/master/ScreenShot/fs_3.gif)
+![Alt text](https://github.com/dreamfish797/Porter/blob/master/ScreenShot/fs_1.gif)
+![Alt text](https://github.com/dreamfish797/Porter/blob/master/ScreenShot/fs_2.gif)
+![Alt text](https://github.com/dreamfish797/Porter/blob/master/ScreenShot/fs_3.gif)
 ### File Receiver ###
-![Alt text](https://github.com/dreamfish797/KuaiChuan/blob/master/ScreenShot/fr_1.gif)
-![Alt text](https://github.com/dreamfish797/KuaiChuan/blob/master/ScreenShot/fr_2.gif)
+![Alt text](https://github.com/dreamfish797/Porter/blob/master/ScreenShot/fr_1.gif)
+![Alt text](https://github.com/dreamfish797/Porter/blob/master/ScreenShot/fr_2.gif)
 
 ### Web Transfer ###
-![Alt text](https://github.com/dreamfish797/KuaiChuan/blob/master/ScreenShot/w_1.gif)
+![Alt text](https://github.com/dreamfish797/Porter/blob/master/ScreenShot/w_1.gif)
 
-![Alt text](https://github.com/dreamfish797/KuaiChuan/blob/master/ScreenShot/w_2.jpg)
-![Alt text](https://github.com/dreamfish797/KuaiChuan/blob/master/ScreenShot/w_3.jpg)
+![Alt text](https://github.com/dreamfish797/Porter/blob/master/ScreenShot/w_2.jpg)
+![Alt text](https://github.com/dreamfish797/Porter/blob/master/ScreenShot/w_3.jpg)
 
-## What is AnyShare
+## What is Principle
 
-AnyShare has two point to transfer files:
+Porter has two point to transfer files:
 
 1. transfer files from android device 2 android device.
 2. transfer files by the web.
@@ -45,9 +45,9 @@ Email:cmy797@126.com
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
-
+    
         http://www.apache.org/licenses/LICENSE-2.0
-
+    
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
