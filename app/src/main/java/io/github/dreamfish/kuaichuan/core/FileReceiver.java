@@ -56,12 +56,12 @@ public class FileReceiver extends BaseTransfer implements Runnable {
     public void run() {
         //初始化
         try {
-            if(mOnReceiveListener != null) mOnReceiveListener.onStart();
+            if (mOnReceiveListener != null) mOnReceiveListener.onStart();
             init();
         } catch (Exception e) {
             e.printStackTrace();
             MLog.i(TAG, "FileReceiver init() --->>> occur expection");
-            if(mOnReceiveListener != null) mOnReceiveListener.onFailure(e, mFileInfo);
+            if (mOnReceiveListener != null) mOnReceiveListener.onFailure(e, mFileInfo);
         }
 
         //解析头部
@@ -70,7 +70,7 @@ public class FileReceiver extends BaseTransfer implements Runnable {
         } catch (Exception e) {
             e.printStackTrace();
             MLog.i(TAG, "FileReceiver parseHeader() --->>> occur expection");
-            if(mOnReceiveListener != null) mOnReceiveListener.onFailure(e, mFileInfo);
+            if (mOnReceiveListener != null) mOnReceiveListener.onFailure(e, mFileInfo);
         }
 
 
@@ -80,7 +80,7 @@ public class FileReceiver extends BaseTransfer implements Runnable {
         } catch (Exception e) {
             e.printStackTrace();
             MLog.i(TAG, "FileReceiver parseBody() --->>> occur expection");
-            if(mOnReceiveListener != null) mOnReceiveListener.onFailure(e, mFileInfo);
+            if (mOnReceiveListener != null) mOnReceiveListener.onFailure(e, mFileInfo);
         }
 
         //结束
@@ -89,15 +89,15 @@ public class FileReceiver extends BaseTransfer implements Runnable {
         } catch (Exception e) {
             e.printStackTrace();
             MLog.i(TAG, "FileReceiver finish() --->>> occur expection");
-            if(mOnReceiveListener != null) mOnReceiveListener.onFailure(e, mFileInfo);
+            if (mOnReceiveListener != null) mOnReceiveListener.onFailure(e, mFileInfo);
         }
 
 
     }
 
     @Override
-    public void init() throws Exception{
-        if(this.mSocket != null){
+    public void init() throws Exception {
+        if (this.mSocket != null) {
             this.mInputStream = mSocket.getInputStream();
         }
     }
@@ -112,11 +112,11 @@ public class FileReceiver extends BaseTransfer implements Runnable {
         int headTotal = 0;
         int readByte = -1;
         //开始读取header
-        while((readByte = mInputStream.read()) != -1){
+        while ((readByte = mInputStream.read()) != -1) {
             headerBytes[headTotal] = (byte) readByte;
 
-            headTotal ++;
-            if(headTotal == headerBytes.length){
+            headTotal++;
+            if (headTotal == headerBytes.length) {
                 break;
             }
         }
@@ -129,17 +129,17 @@ public class FileReceiver extends BaseTransfer implements Runnable {
         int screenshotTotal = 0;
         int sreadByte = -1;
         //开始读取缩略图
-        while((sreadByte = mInputStream.read()) != -1){
+        while ((sreadByte = mInputStream.read()) != -1) {
             screenshotBytes[screenshotTotal] = (byte) sreadByte;
 
-            screenshotTotal ++;
-            if(screenshotTotal == screenshotBytes.length){
+            screenshotTotal++;
+            if (screenshotTotal == screenshotBytes.length) {
                 break;
             }
         }
 
         Bitmap bitmap = BitmapFactory.decodeByteArray(screenshotBytes, 0, screenshotBytes.length);
-        if(mOnReceiveListener != null)mOnReceiveListener.onGetScreenshot(bitmap);
+        if (mOnReceiveListener != null) mOnReceiveListener.onGetScreenshot(bitmap);
 
         MLog.i(TAG, "FileReceiver receive screenshot size------>>>" + screenshotTotal);
 //        MLog.i(TAG, "FileReceiver receive screenshot------>>>" + new String(headerBytes, UTF_8));
@@ -151,7 +151,7 @@ public class FileReceiver extends BaseTransfer implements Runnable {
         jsonStr = strArray[1].trim();
         mFileInfo = FileInfo.toObject(jsonStr);
         mFileInfo.setBitmap(bitmap);
-        if(mOnReceiveListener != null) mOnReceiveListener.onGetFileInfo(mFileInfo);
+        if (mOnReceiveListener != null) mOnReceiveListener.onGetFileInfo(mFileInfo);
 //        String fileName = getFileName(fileInfo.getFilePath());
 //        int fileSize = fileInfo.getSize();
         MLog.i(TAG, "parseHeader######>>>end");
@@ -174,8 +174,8 @@ public class FileReceiver extends BaseTransfer implements Runnable {
 
         long sTime = System.currentTimeMillis();
         long eTime = 0;
-        while((len=mInputStream.read(bytes)) != -1){
-            synchronized(LOCK) {
+        while ((len = mInputStream.read(bytes)) != -1) {
+            synchronized (LOCK) {
                 if (mIsPaused) {
                     try {
                         LOCK.wait();
@@ -187,9 +187,9 @@ public class FileReceiver extends BaseTransfer implements Runnable {
                 bos.write(bytes, 0, len);
                 total = total + len;
                 eTime = System.currentTimeMillis();
-                if(eTime - sTime > 200) { //大于500ms 才进行一次监听
+                if (eTime - sTime > 200) { //大于500ms 才进行一次监听
                     sTime = eTime;
-                    if(mOnReceiveListener != null) mOnReceiveListener.onProgress(total, fileSize);
+                    if (mOnReceiveListener != null) mOnReceiveListener.onProgress(total, fileSize);
                 }
             }
 
@@ -205,14 +205,14 @@ public class FileReceiver extends BaseTransfer implements Runnable {
 
         MLog.i(TAG, "parseBody######>>>end");
 
-        if(mOnReceiveListener != null) mOnReceiveListener.onSuccess(mFileInfo);
+        if (mOnReceiveListener != null) mOnReceiveListener.onSuccess(mFileInfo);
     }
 
     @Override
     public void finish() {
         //TODO 实现一些资源的关闭
 
-        if(mInputStream != null){
+        if (mInputStream != null) {
             try {
                 mInputStream.close();
             } catch (IOException e) {
@@ -220,7 +220,7 @@ public class FileReceiver extends BaseTransfer implements Runnable {
             }
         }
 
-        if(mSocket != null && mSocket.isConnected()){
+        if (mSocket != null && mSocket.isConnected()) {
             try {
                 mSocket.close();
             } catch (IOException e) {
@@ -236,7 +236,7 @@ public class FileReceiver extends BaseTransfer implements Runnable {
      * 停止线程下载
      */
     public void pause() {
-        synchronized(LOCK) {
+        synchronized (LOCK) {
             mIsPaused = true;
             LOCK.notifyAll();
         }
@@ -246,7 +246,7 @@ public class FileReceiver extends BaseTransfer implements Runnable {
      * 重新开始线程下载
      */
     public void resume() {
-        synchronized(LOCK) {
+        synchronized (LOCK) {
             mIsPaused = false;
             LOCK.notifyAll();
         }
@@ -255,12 +255,17 @@ public class FileReceiver extends BaseTransfer implements Runnable {
     /**
      * 文件接收的监听
      */
-    public interface OnReceiveListener{
+    public interface OnReceiveListener {
         void onStart();
+
         void onGetFileInfo(FileInfo fileInfo);
+
         void onGetScreenshot(Bitmap bitmap);
+
         void onProgress(long progress, long total);
+
         void onSuccess(FileInfo fileInfo);
+
         void onFailure(Throwable t, FileInfo fileInfo);
     }
 

@@ -79,16 +79,16 @@ public class FileSender extends BaseTransfer implements Runnable {
 
     @Override
     public void run() {
-        if(mIsStop) return; //设置当前的任务不执行， 只能在线程未执行之前有效
+        if (mIsStop) return; //设置当前的任务不执行， 只能在线程未执行之前有效
 
         //初始化
         try {
-            if(mOnSendListener != null) mOnSendListener.onStart();
+            if (mOnSendListener != null) mOnSendListener.onStart();
             init();
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             MLog.i(TAG, "FileSender init() --->>> occur expection");
-            if(mOnSendListener != null) mOnSendListener.onFailure(e, mFileInfo);
+            if (mOnSendListener != null) mOnSendListener.onFailure(e, mFileInfo);
         }
 
         //解析头部
@@ -97,7 +97,7 @@ public class FileSender extends BaseTransfer implements Runnable {
         } catch (Exception e) {
             e.printStackTrace();
             MLog.i(TAG, "FileSender init() --->>> occur expection");
-            if(mOnSendListener != null) mOnSendListener.onFailure(e, mFileInfo);
+            if (mOnSendListener != null) mOnSendListener.onFailure(e, mFileInfo);
         }
 
         //解析主体
@@ -106,7 +106,7 @@ public class FileSender extends BaseTransfer implements Runnable {
         } catch (Exception e) {
             e.printStackTrace();
             MLog.i(TAG, "FileSender init() --->>> occur expection");
-            if(mOnSendListener != null) mOnSendListener.onFailure(e, mFileInfo);
+            if (mOnSendListener != null) mOnSendListener.onFailure(e, mFileInfo);
         }
 
         //结束
@@ -115,17 +115,17 @@ public class FileSender extends BaseTransfer implements Runnable {
         } catch (Exception e) {
             e.printStackTrace();
             MLog.i(TAG, "FileSender finish() --->>> occur expection");
-            if(mOnSendListener != null) mOnSendListener.onFailure(e, mFileInfo);
+            if (mOnSendListener != null) mOnSendListener.onFailure(e, mFileInfo);
         }
 
 
     }
 
     @Override
-    public void init() throws Exception  {
-            this.mSocket = new Socket(mServerIpAddress, mPort);
-            OutputStream os = this.mSocket.getOutputStream();
-            mOutputStream = new BufferedOutputStream(os);
+    public void init() throws Exception {
+        this.mSocket = new Socket(mServerIpAddress, mPort);
+        OutputStream os = this.mSocket.getOutputStream();
+        mOutputStream = new BufferedOutputStream(os);
     }
 
     @Override
@@ -138,7 +138,7 @@ public class FileSender extends BaseTransfer implements Runnable {
         jsonStr = TYPE_FILE + SPERATOR + jsonStr;
         headerSb.append(jsonStr);
         int leftLen = BYTE_SIZE_HEADER - jsonStr.getBytes(UTF_8).length; //对于英文是一个字母对应一个字节，中文的情况下对应两个字节。剩余字节数不应该是字节数
-        for(int i=0; i < leftLen; i++){
+        for (int i = 0; i < leftLen; i++) {
             headerSb.append(" ");
         }
         byte[] headbytes = headerSb.toString().getBytes(UTF_8);
@@ -153,25 +153,25 @@ public class FileSender extends BaseTransfer implements Runnable {
         int ssByteArraySize = 0;
 
         //缩略图的分类处理
-        if(mFileInfo != null){
+        if (mFileInfo != null) {
             Bitmap screenshot = null;
             byte[] bytes = null;
-            if(FileUtils.isApkFile(mFileInfo.getFilePath())){ //apk 缩略图处理
+            if (FileUtils.isApkFile(mFileInfo.getFilePath())) { //apk 缩略图处理
                 Bitmap bitmap = ApkUtils.drawableToBitmap(ApkUtils.getApkThumbnail(mContext, mFileInfo.getFilePath()));
                 screenshot = ScreenshotUtils.extractThumbnail(bitmap, 96, 96);
-            }else if(FileUtils.isJpgFile(mFileInfo.getFilePath())) { //jpg 缩略图处理
+            } else if (FileUtils.isJpgFile(mFileInfo.getFilePath())) { //jpg 缩略图处理
                 screenshot = FileUtils.getScreenshotBitmap(mContext, mFileInfo.getFilePath(), FileInfo.TYPE_JPG);
                 screenshot = ScreenshotUtils.extractThumbnail(screenshot, 96, 96);
-            }else if(FileUtils.isMp3File(mFileInfo.getFilePath())) { //mp3 缩略图处理
+            } else if (FileUtils.isMp3File(mFileInfo.getFilePath())) { //mp3 缩略图处理
                 //DO NOTHING mp3文件可以没有缩略图 可指定
                 screenshot = FileUtils.getScreenshotBitmap(mContext, mFileInfo.getFilePath(), FileInfo.TYPE_MP3);
                 screenshot = ScreenshotUtils.extractThumbnail(screenshot, 96, 96);
-            }else if(FileUtils.isMp4File(mFileInfo.getFilePath())) { //mp4 缩略图处理
+            } else if (FileUtils.isMp4File(mFileInfo.getFilePath())) { //mp4 缩略图处理
                 screenshot = FileUtils.getScreenshotBitmap(mContext, mFileInfo.getFilePath(), FileInfo.TYPE_MP4);
                 screenshot = ScreenshotUtils.extractThumbnail(screenshot, 96, 96);
             }
 
-            if(screenshot != null){
+            if (screenshot != null) {
                 bytes = FileUtils.bitmapToByteArray(screenshot);
                 ssByteArraySize = bytes.length;
                 mOutputStream.write(bytes);
@@ -179,7 +179,7 @@ public class FileSender extends BaseTransfer implements Runnable {
         }
 
         int ssLeftLen = BYTE_SIZE_SCREENSHOT - ssByteArraySize; //缩略图剩余的字节数
-        for(int i=0; i < ssLeftLen; i++){
+        for (int i = 0; i < ssLeftLen; i++) {
             screenshotSb.append(" ");
         }
         byte[] screenshotBytes = screenshotSb.toString().getBytes(UTF_8);
@@ -211,8 +211,8 @@ public class FileSender extends BaseTransfer implements Runnable {
 
         long sTime = System.currentTimeMillis();
         long eTime = 0;
-        while((len=fis.read(bytes)) != -1){
-            synchronized(LOCK) {
+        while ((len = fis.read(bytes)) != -1) {
+            synchronized (LOCK) {
                 if (mIsPaused) {
                     try {
                         LOCK.wait();
@@ -224,9 +224,9 @@ public class FileSender extends BaseTransfer implements Runnable {
                 mOutputStream.write(bytes, 0, len);
                 total = total + len;
                 eTime = System.currentTimeMillis();
-                if(eTime - sTime > 200){ //大于500ms 才进行一次监听
+                if (eTime - sTime > 200) { //大于500ms 才进行一次监听
                     sTime = eTime;
-                    if(mOnSendListener != null) mOnSendListener.onProgress(total, fileSize);
+                    if (mOnSendListener != null) mOnSendListener.onProgress(total, fileSize);
                 }
             }
 
@@ -246,7 +246,7 @@ public class FileSender extends BaseTransfer implements Runnable {
         mOutputStream.close();
         MLog.i(TAG, "parseBody######>>>end");
 
-        if(mOnSendListener != null) mOnSendListener.onSuccess(mFileInfo);
+        if (mOnSendListener != null) mOnSendListener.onSuccess(mFileInfo);
 
         mIsFinished = true;
     }
@@ -254,7 +254,7 @@ public class FileSender extends BaseTransfer implements Runnable {
     @Override
     public void finish() {
 
-        if(mOutputStream != null){
+        if (mOutputStream != null) {
             try {
                 mOutputStream.close();
             } catch (IOException e) {
@@ -262,7 +262,7 @@ public class FileSender extends BaseTransfer implements Runnable {
             }
         }
 
-        if(mSocket != null && mSocket.isConnected()){
+        if (mSocket != null && mSocket.isConnected()) {
             try {
                 mSocket.close();
             } catch (IOException e) {
@@ -278,7 +278,7 @@ public class FileSender extends BaseTransfer implements Runnable {
      * 停止线程下载
      */
     public void pause() {
-        synchronized(LOCK) {
+        synchronized (LOCK) {
             mIsPaused = true;
             LOCK.notifyAll();
         }
@@ -288,7 +288,7 @@ public class FileSender extends BaseTransfer implements Runnable {
      * 重新开始线程下载
      */
     public void resume() {
-        synchronized(LOCK) {
+        synchronized (LOCK) {
             mIsPaused = false;
             LOCK.notifyAll();
         }
@@ -297,15 +297,16 @@ public class FileSender extends BaseTransfer implements Runnable {
     /**
      * 设置当前的发送任务不执行
      */
-    public void stop(){
+    public void stop() {
         mIsStop = true;
     }
 
     /**
      * 文件是否在传送中？
+     *
      * @return
      */
-    public boolean isRunning(){
+    public boolean isRunning() {
         return !mIsFinished;
     }
 
@@ -313,10 +314,13 @@ public class FileSender extends BaseTransfer implements Runnable {
     /**
      * 文件传送的监听
      */
-    public interface OnSendListener{
+    public interface OnSendListener {
         void onStart();
+
         void onProgress(long progress, long total);
+
         void onSuccess(FileInfo fileInfo);
+
         void onFailure(Throwable t, FileInfo fileInfo);
     }
 

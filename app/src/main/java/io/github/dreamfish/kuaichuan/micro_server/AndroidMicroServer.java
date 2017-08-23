@@ -179,12 +179,4 @@ public class AndroidMicroServer {
         return request;
     }
 
-
-
-    /*
-    public static void main(String[] args){
-        AndroidMicroServer server = new AndroidMicroServer(9090);
-        server.start();
-    }
-    */
 }
